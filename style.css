@@ -96,7 +96,6 @@ nav {
     margin: 0 auto;
     z-index: 999;
     padding: 20px 0;
-    border-bottom: 1px solid white;
 }
 
 .navigation,
@@ -426,6 +425,11 @@ nav #toggle.on #three {
     transition-delay: .2s;
 }
 
+#contact{
+    width: 70%;
+    margin: 0 auto;
+}
+
 #contact h2 {
     margin: 4em 0;
     text-align: center;
@@ -437,7 +441,7 @@ input {
     border-bottom: 1px solid black;
     text-align: center;
     padding: 1em;
-    font-size: 1.5em;
+    font-size: 1.2em;
 }
 
 input:focus {
@@ -483,7 +487,7 @@ input:focus {
     border: 1px solid black;
     border-radius: 100px;
     font-weight: 500;
-    font-size: 1.3em;
+    font-size: 1.1em;
     padding: .8em 3em;
     transform: scale(1);
     transition: .2s;
@@ -501,11 +505,11 @@ input:focus {
 }
 
 .icon {
-    width: 6em;
+    width: 4em;
 }
 
 .contact-info {
-    font-size: 2em;
+    font-size: 1.5em;
     margin-left: 1.5em
 }
 
@@ -545,7 +549,7 @@ footer h4 {
     }
 }
 
-@media(max-width: 767px) {
+@media(max-width: 768px) {
 
     section {
         min-height: 20em;

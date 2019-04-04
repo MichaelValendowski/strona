@@ -91,6 +91,7 @@
                     <div class="img-text">
                         <h2>Responsywność</h2>
                         <p>Strony wyświetlają się prawidłowo na wszystkich urządzeniach: komputerach, tabletach i smartfonach.
+
                         </p>
                     </div>
                 </div>
@@ -100,7 +101,9 @@
                     </div>
                     <div class="img-text">
                         <h2>CMS Wordpress</h2>
-                        <p>Dzięki wordpressowi można szybko i łatwo dodawać treści do strony a zarządzanie nią jest banalnie proste i intuicyjne.</p>
+                        <p>Dzięki wordpressowi można szybko i łatwo dodawć treści do strony
+                            a zarządzanie stroną jest banalnie proste i intuicyjne.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -121,31 +124,34 @@
                 <a class="btn-contact" href="">wyślij</a>
             </div>
 
-
+            
         </section>
 
     </div>
 
-    <footer class="container">
-        <div class="icons">
-            <div class="contact-box">
-                <div class="contact-img">
-                    <img class="icon" src="icons/baseline-phone-24px.svg" alt="">
-                </div>
-                <div class="contact-info">
-                    <p>785 364 268</p>
-                </div>
-            </div>
-            <div class="contact-box">
-                <div class="contact-img">
-                    <img class="icon" src="icons/baseline-mail_outline-24px.svg" alt="">
-                </div>
-                <div class="contact-info">
-                    <p>kontakt@biuro.pl</p>
-                </div>
-            </div>
-        </div>
 
+
+    <footer >
+      <div class="container">
+       <div class="icons">
+                <div class="contact-box">
+                    <div class="contact-img">
+                        <img class="icon" src="icons/baseline-phone-24px.svg" alt="">
+                    </div>
+                    <div class="contact-info">
+                        <p>785 364 268</p>
+                    </div>
+                </div>
+                <div class="contact-box">
+                    <div class="contact-img">
+                        <img class="icon" src="icons/baseline-mail_outline-24px.svg" alt="">
+                    </div>
+                    <div class="contact-info">
+                        <p>kontakt@biuro.pl</p>
+                    </div>
+                </div>
+            </div>
+            </div>
         <h4>Copyright &copy; 2019 - Cool Strony</h4>
     </footer>
 
@@ -154,16 +160,13 @@
     <script>
         $(function() {
             //menu
-
             (function() {
                 var navLinks = $('nav ul li a'),
                     navH = $('nav').height(),
                     section = $('section'),
                     documentEl = $(document);
-
                 documentEl.on('scroll', function() {
                     var currentScrollPos = documentEl.scrollTop();
-
                     section.each(function() {
                         var self = $(this);
                         if (self.offset().top < (currentScrollPos + navH) && (currentScrollPos + navH) < (self.offset().top + self.outerHeight())) {
@@ -172,13 +175,8 @@
                             $(targetClass).addClass('active');
                         }
                     });
-
                 });
-
-
-
             })();
-
             $(window).on('scroll', function() {
                 if ($(window).scrollTop()) {
                     $('nav').addClass('black');
@@ -188,37 +186,28 @@
                     $('.navigation').removeClass('black');
                 }
             });
-
             $("#toggle").click(function() {
                 $(this).toggleClass('on');
                 $("#resize").toggleClass("active");
             });
-
             $('#menu a').on('click', function() {
                 $('#toggle').removeClass('on');
                 $('#resize').removeClass('active');
             });
-
             //contact form
-
             $('input').focusin(function() {
                 input = $(this);
                 input.data('place-holder-text', input.attr('placeholder'))
                 input.attr('placeholder', '');
             });
-
             $('input').focusout(function() {
                 input = $(this);
                 input.attr('placeholder', input.data('place-holder-text'));
             });
-
             // smooth scroll
-
             var scroll = new SmoothScroll('a[href*="#"]', {
                 speed: 1000
             });
-
-
             $(window).scroll(function() {
                 if ($(this).scrollTop() > 200) {
                     $('.scrollToTop').fadeIn();
@@ -232,7 +221,6 @@
                     scrollTop: 0
                 }, 1000)
             })
-
         });
     </script>
 </body></html>

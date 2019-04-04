@@ -667,11 +667,7 @@ footer h4 {
     }
 }
 
-@media(min-width: 768px){
-    #resize{
-        visibility: hidden !important;
-    }
-}
+
 
 @media (max-height: 450px){
     .container .content h3 {

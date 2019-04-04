@@ -541,7 +541,7 @@ footer h4 {
     }
 }
 
-@media(max-width: 768px) {
+@media(max-width: 767px) {
 
     section {
         min-height: 20em;
@@ -659,8 +659,32 @@ footer h4 {
     }
 }
 
-@media(min-width: 768px) {
+@media(min-width: 767px) {
     #resize {
         visibility: hidden !important;
+    }
+}
+
+@media(max-height: 450px){
+    .home {
+        background: url(img/Grand-Teton-Road.jpg);
+        background-size: cover;
+    }
+
+    header {
+        background: rgba(0, 0, 0, .8)
+    }
+
+    .video {
+        display: none
+    }
+    
+    .container .content h3 {
+        display: none;
+    }
+    
+    .container .content .title {
+        width: 100%;
+        text-align: center;
     }
 }

@@ -1,0 +1,666 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&subset=latin-ext');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+section {
+    min-height: 30em;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    letter-spacing: 0.1em;
+}
+
+img {
+    width: 100%;
+}
+
+h2 {
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+}
+
+p {
+    line-height: 2;
+    letter-spacing: 0.1em;
+}
+
+.header {
+    width: 100%;
+    height: 100vh;
+}
+
+header {
+    height: 100vh;
+    position: relative;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .8);
+}
+
+.content {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 90%;
+    display: flex;
+    align-items: center;
+}
+
+.video,
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    z-index: -1;
+}
+
+video {
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.overlay {
+    background: rgba(0, 0, 0, .7);
+    z-index: 0;
+}
+
+.navigation {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    min-height: 3.5em;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    z-index: 999;
+    padding: 20px 0;
+    border-bottom: 1px solid white;
+}
+
+.navigation,
+nav {
+    transition: .3s
+}
+
+nav.black {
+    border: none;
+}
+
+.navigation.black {
+    background: rgba(0, 0, 0, .9);
+}
+
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-left: 3.5em;
+}
+
+nav ul li a,
+.logo {
+    text-decoration: none;
+    color: white;
+    font-weight: 300;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+nav ul li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: .3s;
+    margin-top: 5px;
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+    width: 100%;
+    transition: .3s;
+}
+
+nav #toggle {
+    position: absolute;
+    z-index: 1000;
+    right: 20px;
+    top: 14px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    float: right;
+    transition: all .2s ease-out;
+    visibility: hidden;
+    opacity: 0;
+}
+
+nav #toggle .span {
+    height: 3px;
+    background: white;
+    transition: all .2s ease-out;
+    backface-visibility: hidden;
+    margin: 5px auto;
+}
+
+nav #toggle.on #one {
+    transform: rotate(45deg) translateX(2px) translateY(4px);
+}
+
+nav #toggle.on #two {
+    opacity: 0;
+}
+
+nav #toggle.on #three {
+    transform: rotate(-45deg) translateX(8px) translateY(-10px);
+}
+
+#resize {
+    z-index: 1;
+    top: 0;
+    position: absolute;
+    background: #000;
+    width: 100%;
+    height: 100vh;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .2s ease-out;
+    display: table;
+}
+
+#resize #menu {
+    height: 50px;
+    display: table-cell;
+    vertical-align: center;
+}
+
+#resize #menu li {
+    display: block;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 50px;
+    min-height: 50px;
+    font-weight: 200;
+    cursor: pointer;
+    padding: 30px;
+    text-transform: uppercase;
+    transition: all .3s ease-out;
+}
+
+#resize #menu li:nth-child(1) {
+    margin-top: 1em;
+}
+
+#resize #menu li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 300
+}
+
+#resize.active {
+    visibility: visible;
+    opacity: 0.97;
+}
+
+.content .title {
+    line-height: 1.3;
+}
+
+.content .title h1 {
+    font-size: 2.8em;
+    font-weight: 500;
+    color: white;
+}
+
+.title-button {
+    display: inline-block;
+    margin-top: 2em;
+    padding: 1em 3em;
+    border: none;
+    border-radius: 100px;
+    background: #B7900B;
+    transform: scale(1);
+    transition: .2s;
+
+}
+
+.title-button {
+    text-decoration: none;
+    color: white;
+    font-size: 1em;
+    letter-spacing: 0.1em;
+}
+
+.title-button:hover,
+.btn-contact:hover {
+    transform: scale(1.05);
+}
+
+.content h3 {
+    transform: rotate(90deg);
+    position: absolute;
+    right: -7.2em;
+    color: white;
+    letter-spacing: 0.2em;
+    font-weight: 400;
+}
+
+#about,
+#services,
+#contact {
+    padding-top: 6em;
+}
+
+#about {
+    display: flex;
+    margin-bottom: 3em;
+}
+
+#about .text-about {
+    flex: 1;
+    margin-right: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#about .about-image {
+    flex: 1;
+    margin-left: 2em;
+    display: flex;
+    justify-content: center;
+}
+
+.about-image img {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .8);
+    height: 100%;
+    object-fit: cover;
+}
+
+#services .text-services {
+    text-align: center;
+    margin-bottom: 5em;
+}
+
+#services .text-services h2 {
+    text-align: center;
+}
+
+.services-gallery {
+    display: flex;
+    position: relative;
+}
+
+.services-gallery .box-1 {
+    flex: 1;
+}
+
+.services-gallery .box-2 {
+    flex: 2;
+}
+
+.services-gallery .box {
+    position: relative;
+    background: #000;
+    height: 350px;
+    margin: .5em;
+    box-sizing: border-box;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .8);
+    overflow: hidden;
+}
+
+.services-gallery .box::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    box-sizing: border-box;
+    transition: 0.5s;
+    transform: scaleX(0);
+    opacity: 0;
+}
+
+.services-gallery .box:hover::before {
+    transform: scaleX(1);
+    opacity: 1;
+}
+
+.services-gallery .box::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    box-sizing: border-box;
+    transition: 0.5s;
+    transform: scaleY(0);
+    opacity: 0;
+}
+
+.services-gallery .box:hover::after {
+    transform: scaleY(1);
+    opacity: 1;
+}
+
+.imgBox img {
+    height: 350px;
+    object-fit: cover;
+    transition: .5s
+}
+
+.box:hover .imgBox img {
+    opacity: .2;
+    transform: scale(1.2);
+}
+
+.box .img-text {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    color: white;
+}
+
+.box .img-text h2 {
+    margin: 0;
+    padding: 0;
+    transition: .5s;
+    margin-bottom: 2em;
+    transform: translateY(-50px);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.box .img-text p {
+    margin: 0;
+    padding: 0;
+    transition: .5s;
+    margin-bottom: 2em;
+    transform: translateY(50px);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.box:hover .img-text h2,
+.box:hover .img-text p {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0px);
+    transition-delay: .2s;
+}
+
+#contact h2 {
+    margin: 4em 0;
+    text-align: center;
+    font-weight: 400;
+}
+
+input {
+    border: 0;
+    border-bottom: 1px solid black;
+    text-align: center;
+    padding: 1em;
+    font-size: 1.5em;
+}
+
+input:focus {
+    outline: none;
+}
+
+.login {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.login input {
+    width: 40%;
+    margin: auto 0
+}
+
+::placeholder {
+    color: black;
+    text-transform: uppercase;
+    text-align: center;
+
+}
+
+.message {
+    display: block;
+    width: 100%;
+    margin: 5em 0 2em;
+}
+
+.textarea {
+    display: flex;
+}
+
+.textarea input {
+    width: 100%;
+}
+
+.btn-contact {
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    border: 1px solid black;
+    border-radius: 100px;
+    font-weight: 500;
+    font-size: 1.3em;
+    padding: .8em 3em;
+    transform: scale(1);
+    transition: .2s;
+}
+
+.contact-button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.contact-box {
+    display: flex;
+    align-items: center;
+    margin: 2em 0;
+}
+
+.icon {
+    width: 6em;
+}
+
+.contact-info {
+    font-size: 2em;
+    margin-left: 1.5em
+}
+
+.scrollToTop{
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: rgba(0,0,0,.9);
+    color: white;
+    display: none;
+}
+
+.scrollToTop:hover{
+    background: black;
+}
+
+footer {
+    padding: 2em;
+    text-align: center;
+}
+
+footer h4 {
+    font-weight: 400;
+}
+
+@media(max-width: 1000px) {
+    .services-gallery {
+        display: block;
+    }
+
+    .services-gallery .box {
+        margin-bottom: 2em
+    }
+}
+
+@media(max-width: 760px) {
+
+    section {
+        min-height: 20em;
+    }
+
+    .home {
+        background: url(img/Grand-Teton-Road.jpg);
+        background-size: cover;
+    }
+
+    header {
+        background: rgba(0, 0, 0, .8)
+    }
+
+    .video {
+        display: none
+    }
+
+    nav {
+        border: none;
+    }
+
+    .desktop,
+    .logo {
+        display: none;
+    }
+
+    nav #toggle {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    #resize #menu a {
+        font-size: 20px;
+    }
+
+    .container .content .title {
+        width: 100%;
+        text-align: center;
+    }
+
+    .container .content .title h1 {
+        font-size: 2.5rem;
+        line-height: 1.6;
+    }
+
+    .container .content button {
+        padding: 1em 2.5em;
+        font-size: 1em;
+    }
+
+    .container .content h3 {
+        display: none;
+    }
+
+    #about {
+        display: block;
+        text-align: center;
+    }
+
+    #about .about-image {
+        margin: 2em 0;
+    }
+
+    #about .text-about {
+        margin: 0;
+    }
+
+    #services {
+        padding: 0;
+    }
+
+    .services-gallery {
+        display: none;
+    }
+
+    #contact h2 {
+        margin: 2em 0;
+    }
+
+    .login {
+        flex-direction: column;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .login input {
+        width: 90%;
+        margin: 1em 0;
+    }
+
+    .message {
+        margin: 1em 0 3em;
+    }
+
+    #contact {
+        padding: 0;
+    }
+
+    .icons {
+        margin: 4em 0;
+    }
+
+    .contact-box {
+        display: block;
+        text-align: center;
+    }
+
+    .contact-info {
+        margin: 1em 0 1.5em 0;
+    }
+
+    .contact-button {
+        justify-content: center;
+    }
+}
+
+@media(min-width: 768px) {
+    #resize {
+        visibility: hidden !important;
+    }
+}
